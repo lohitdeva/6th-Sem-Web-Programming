@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN" "http://w3.org/TR/xhtml11.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+    <title>Pizza Hut Menu</title>
+</head>
+
+<body bgcolor="#00ffff">
+    <form action="">
+        <fieldset>
+            <legend>Personal Information</legend>
+            <label>First Name:</label>
+            <input type="text" /> <br />
+            <label>Last Name:</label>
+            <input type="text" /> <br />
+            <label>Email:</label>
+            <input type="email" /> <br />
+            <label>Mobile Number:</label>
+            <input type="number" /> <br />
+        </fieldset>
+        <br />
+
+        <label>Is this your first visit?</label> <br />
+        <input type="radio" value="Yes" name="choice" /> <label>Yes</label> <br />
+        <input type="radio" value="No" name="choice" /> <label>No</label> <br />
+        <br />
+
+        <label>Select Products:</label><br />
+        <input type="checkbox" value="Pizza" /> <label>Pizza</label> <br />
+        <input type="checkbox" value="Burger" /> <label>Burger</label> <br />
+        <input type="checkbox" value="Coke" /> <label>Coke</label> <br />
+        <input type="checkbox" value="French Fries" /> <label>French Fries</label> <br />
+        <br />
+
+        <label>Payment Method:</label><br />
+        <input type="radio" name="pay" value="Visa" /> <label>Visa</label>
+        <input type="radio" name="pay" value="MasterCard" /> <label>MasterCard</label>
+        <input type="radio" name="pay" value="American Express" /> <label>American Express</label>
+        <br />
+
+        <label>Select Toppings:</label>
+        <select id="d1" size="4" multiple="multiple">
+            <option value="Tomato">Tomato</option>
+            <option value="Chilli">Chilli</option>
+            <option value="Pepparoni">Pepparoni</option>
+            <option value="Capsicum">Capsicum</option>
+        </select> <br />
+        <br />
+
+        <label>Comments:</label>
+        <textarea cols="25" rows="7"></textarea> <br />
+        <br />
+
+        <input type="submit" value="Submit" />
+        <input type="reset" value="Reset" />
+        <input type="button" value="Okay" onclick="click('Welcome to webpage!')" />
+
+    </form>
+</body>
+
+</html>
