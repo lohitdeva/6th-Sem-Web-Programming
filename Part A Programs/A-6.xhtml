@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<!-- Write an XHTML document to generate the current date in words -->
+
+<!DOCTYPE html PUBLIC "-//W3C//DTDXHTML1.1/EN" "http://www.w3c.org/TR/XHTML11/DTD/xhtml11.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <title>Display Date</title>
+  </head>
+  <body bgcolor="lightblue">
+    <p id="p1">Hello</p>
+    <script type="text/javascript">
+      <![CDATA[
+        var d = new Date();
+        var w = new Array("Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday");
+        var m = new Array("January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December");
+        document.getElementById("p1").innerHTML = w[d.getDay()] + " " + d.getDate() + " " + m[d.getMonth()] + " " + d.getFullYear();
+      ]]>
+    </script>
+  </body>
+</html>

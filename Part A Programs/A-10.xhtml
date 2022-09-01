@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<!-- Write an XHTML document to implement onMouseOver and onMouseOut events of Javascript -->
+
+<!DOCTYPE html PUBLIC "-//W3C/EN/DTDXHTML1.1" "http://www.w3c.org/TR/XHTML11/DTD/xhtml11.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <title>Mouse Events</title>
+    <script type="text/javascript">
+      <![CDATA[
+        function mouseOver(){
+          document.getElementById("img1").src = "chamber.jpg";
+        }
+        function mouseOut(){
+          document.getElementById("img1").src = "omen.jpg";
+        }
+      ]]>
+    </script>
+  </head>
+  <body bgcolor="aqua">
+    <img src="reyna.jpg" id="img1" onmouseover="mouseOver()" onmouseout="mouseOut()" width="500" height="500"/>
+  </body>
+</html>

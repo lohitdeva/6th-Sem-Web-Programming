@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<!-- Write an XHTML program to compute the bill from 2 multiple choice list and 1 single choice list -->
+
+<!DOCTYPE html PUBLIC "-//W3C/DTDXHTML1.1/EN" "http://www.w3c.org/TR/XHTML11/DTD/xhtml11.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <title>Menu</title>
+  </head>
+  <body bgcolor="pink">
+    <form>
+      <table border="1">
+        <tr>
+          <td colspan="2" align="center"><h2>Restaurant Menu</h2></td>
+        </tr>
+        <tr>
+          <td>Major Dishes</td>
+          <td>
+            <select id="major" size="3" multiple="multiple">
+              <option value="150">Pulao</option>
+              <option value="100">Roti with Dal</option>
+              <option value="200">Biryani</option>
+            </select>
+          </td>
+        </tr>
+        <tr>
+          <td>Starters</td>
+          <td>
+            <select id="starter" size="3" multiple="multiple">
+              <option value="70">Gobi Manchurian</option>
+              <option value="50">Soup</option>
+              <option value="90">Masala Papad</option>
+            </select>
+          </td>
+        </tr>
+        <tr>
+          <td>Soft Drinks</td>
+          <td>
+            <select id="drink" size="3">
+              <option value="30">Pepsi</option>
+              <option value="20">Maaza</option>
+              <option value="10">Water</option>
+            </select>
+          </td>
+        </tr>
+        <tr>
+          <td colspan="2" align="center"><textarea rows="12" cols="40" id="ordereditems"></textarea></td>
+        </tr>
+        <tr>
+          <td><input type="button" value="Total Cost" onclick="findCost()"/></td>
+          <td><input type="reset" value="Clear"/></td>
+        </tr>
+      </table>
+    </form>
+    <script type="text/javascript">
+      <![CDATA[
+        function findCost(){
+          var major = document.getElementById("major");
+          var starter = document.getElementById("starter");
+          var drink = document.getElementById("drink");
+          var str = "ITEM\t\t\tPRICE\n------------------------------\n";
+          var cost = 0;
+          for (var i = 0; i < major.options.length; i++) {
+            var op = major.options[i];
+            if(op.selected == true) {
+              var price = parseInt(op.value);
+              cost = cost + price;
+              str = str + op.text + "\t\t" + price + "\n";
+            }
+          }
+          for (var i = 0; i < starter.options.length; i++) {
+            var op = starter.options[i];
+            if(op.selected == true) {
+              var price = parseInt(starter.value);
+              cost = cost + price;
+              str = str + op.text + "\t\t" + price + "\n";
+            }
+          }
+          var drinkIndex = drink.selectedIndex;
+          if(drinkIndex != null) {
+            var selectedDrink = drink.options[drinkIndex].text;
+            var price = parseInt(drink.options[drinkIndex].value);
+            cost = cost + price;
+            str = str + selectedDrink + "\t\t" + price + "\n";
+          }
+          str = str + "\nTotal Cost\t\t" + cost;
+          document.getElementById('ordereditems').value = str;
+        }
+      ]]>
+    </script>
+  </body>
+</html>

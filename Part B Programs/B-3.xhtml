@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<!-- XHTML program to find factorial of a number using recursion -->
+
+<!DOCTYPE html PUBLIC "-//W3C/DTDXHTML1.1/EN" "http://www.w3c.org/TR/XHTML11/DTD/xhtml.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <title>Factorial of a Number</title>
+  </head>
+  <body bgcolor="cream">
+    <div id="text"></div>
+    <script type="text/javascript">
+      <![CDATA[
+        var n = parseInt(prompt("Enter the number"));
+        var res = fact(n);
+        document.getElementById("text").innerHTML = `The factorial of ` + n + ` is ` + res;
+        function fact(num){
+          if(num == 0 || num == 1)
+            return 1;
+          else
+            return num*fact(num-1);
+        }
+      ]]>
+    </script>
+  </body>
+</html>

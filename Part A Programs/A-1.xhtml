@@ -1,0 +1,72 @@
+<?xml version = "1.0" encoding = "utf-8"?>
+<!-- Write an XHTML program to design a form and use javascript to count the number of elements in the form-->
+<!DOCTYPE html PUBLIC "-//w3c/DTDXHTML1.1//EN" "http://www.w3c.org/TR?XHTML11/DTD/XHTML11.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+    <title>Registration Form</title>
+    <script type="text/javascript">
+                <![CDATA[
+            function disp() {
+                alert(document.getElementById("f1").length);
+            }
+        ]]>
+    </script>
+</head>
+
+<body bgcolor="lightgreen" onload="disp()">
+    <form id="f1">
+        <table border="1">
+            <tr>
+                <td>Name</td>
+                <td><input type="text" /></td>
+            </tr>
+            <tr>
+                <td>Choose username:</td>
+                <td><input type="text" /></td>
+            </tr>
+            <tr>
+                <td>Create password:</td>
+                <td><input type="password" /></td>
+            </tr>
+            <tr>
+                <td>Birthday</td>
+                <td>
+                    <select type="date">
+                        <option value="5">5</option>
+                    </select>
+                    <select type="month">
+                        <option value="August">August</option>
+                    </select>
+                    <select type="year">
+                        <option value="1999">1999</option>
+                    </select>
+                </td>
+            </tr>
+            <tr>
+                <td>Gender</td>
+                <td>
+                    <input type="radio" name="r1" />Female
+                    <input type="radio" name="r1" />Male
+                </td>
+            </tr>
+            <tr>
+                <td>Mobile Number:</td>
+                <td><input type="text" /></td>
+            </tr>
+            <tr>
+                <td>Location:</td>
+                <td><input type="text" /></td>
+            </tr>
+            <tr>
+                <td><input type="checkbox" />I agree to the terms and conditions</td>
+            </tr>
+            <tr>
+                <input type="submit" value="submit" />
+                <input type="reset" value="reset" />
+            </tr>
+        </table>
+    </form>
+</body>
+
+</html>

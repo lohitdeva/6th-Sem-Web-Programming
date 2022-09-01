@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Write an XHTML program to design a form and use JS to verify the data filled  -->
+<!DOCTYPE html PUBLIC "-//W3C/DXDHTML1.1/EN" "http://www.w3c.org/TR/XHTML11/DTD/XHTML11.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <title>Validation of Registration Form</title>
+    <script type="text/javascript">
+      <![CDATA[
+        function validate(){
+          if (document.getElementById("f1").name.value == "") {
+            alert("Please enter name");
+            document.getElementById("f1").name.focus();
+            return false;
+          }
+          if(document.getElementById("f1").email.value == "") {
+            alert("Please enter email ID");
+            document.getElementById("f1").email.focus();
+            return false;
+          }
+          if(document.getElementById("f1").zip.value == "") {
+            alert("Please enter ZIP code");
+            document.getElementById("f1").zip.focus();
+            return false;
+          }
+          if (document.getElementById("f1").country.value == "-1") {
+            alert("Please enter country");
+            document.getElementById("f1").country.focus();
+            return false;
+          }
+          return true;
+        }
+        function emailValidate(){
+          var e = document.getElementById("f1").email.value;
+          atpos = e.indexOf("@");
+          dotpos = e.indexOf(".");
+          if (atpos < 1 || dotpos-atpos < 2) {
+            alert("Please enter a valid email");
+            document.getElementById("f1").email.focus();
+            return false;
+          }
+          return true;
+        }
+      ]]>
+    </script>
+  </head>
+  <body bgcolor="orange">
+    <form id="f1" onsubmit="validate()">
+      <table border="1">
+        <tr>
+          <th colspan="2">Registration Form</th>
+        </tr>
+        <tr>
+          <td>Name</td>
+          <td><input type="text" id="name"/></td>
+        </tr>
+        <tr>
+          <td>Email address</td>
+          <td><input type="email" id="email" onchange="emailValidate()"/></td>
+        </tr>
+        <tr>
+          <td>ZIP Code</td>
+          <td><input type="text" id="zip"/></td>
+        </tr>
+        <tr>
+          <td>Country</td>
+          <td>
+            <select id="country">
+              <option value="-1">Choose the country name</option>
+              <option value="1">India</option>
+              <option value="2">UK</option>
+              <option value="3">USA</option>
+            </select>
+          </td>
+        </tr>
+        <tr>
+          <td colspan="2"><input type="submit"/></td>
+        </tr>
+      </table>
+    </form>
+  </body>
+</html>

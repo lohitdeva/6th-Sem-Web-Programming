@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<!-- XHTML document to demonstrate dynamic stacking of images -->
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN" "http://www.w3c.org/TR/XHTML11/DTD/xhtml.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <title>Dynamic Stacking</title>
+    <style type="text/css">
+    .p1{
+      position: absolute;
+      top: 0px;
+      left: 0px;
+      z-index: 0px;
+    }
+
+    .p2{
+      position: absolute;
+      top: 50px;
+      left: 100px;
+      z-index: 0px;
+    }
+
+    .p3{
+      position: absolute;
+      top: 100px;
+      left: 200px;
+      z-index: 0px;
+    }
+    </style>
+  </head>
+  <body>
+    <p>
+      <img src="brooklyn-99.jpg" class="p1" id="c1" alt="image-1" width="200" height="200" onclick="toTop('c1')"/>
+      <img src="better-call-saul.jpg" class="p2" id="c2" alt="image-2" width="200" height="200" onclick="toTop('c2')"/>
+      <img src="bojack-horseman.jpg" class="p3" id="c3" alt="image-3" width="200" height="200" onclick="toTop('c3')"/>
+    </p>
+    <script type="text/javascript" src="stacking.js"></script>
+  </body>
+</html>

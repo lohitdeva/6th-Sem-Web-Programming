@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<!-- XHTML document to find pattern matching in a given string -->
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN" "http://www.w3c.org/TR/XHTML11/DTD/xhtml11.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <title>Pattern Matching</title>
+  </head>
+  <body bgcolor="cream">
+    <p id="demo">Hello! Welcome.</p>
+    <script type="text/javascript">
+      <![CDATA[
+        var str = "The rain in SPAIN stays mainly in the plain";
+        var str1 = "Hello World! Hello be cool in college or school";
+        var str2 = "1,100 or 1000?";
+        var str3 = "Fred, Freddie and Fredrica were siblings";
+        var str4 = "Having 528 apples is better than having 367 oranges";
+        var str5 = "Is this his";
+        var res = str.match(/ain/gi);
+        var p0 = str5.match(/is$/g);
+        var p1 = str1.match(/lo+/g);
+        var p2 = str1.match(/lo*/g);
+        var p3 = str2.match(/10?/g);
+        var p4 = str3.replace(/fre/gi,"Boy");
+        var p5 = str4.match(/(\d+)([^\d]+)(\d+)/);
+        var p6 = str4.match(/\w+/g);
+        document.getElementById("demo").innerHTML = "The patterns are " + res + "<br/>" + p0 + "<br/>" + p1 + "<br/>" + p2 + "<br/>" + p3 + "<br/>" + p4 + "<br/>" + p5 + "<br/>" + p6;
+      ]]>
+    </script>
+  </body>
+</html>

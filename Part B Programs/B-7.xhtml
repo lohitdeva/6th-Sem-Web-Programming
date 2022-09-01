@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<!-- XHTML document to demonstrate dynamic color change -->
+
+<!DOCTYPE html PUBLIC "-//W3C/DTD XHTML 1.1//EN" "http://www.w3c.org/XHTML11/DTD/xhtml11.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <title>Dynamic Color Change</title>
+    <style type="text/css">
+      .n{
+        position: absolute;
+        left: 10px;
+        top: 20px;
+      }
+    </style>
+    <script type="text/javascript">
+      <![CDATA[
+        function changeColor() {
+          var doc = document.getElementById("f1");
+          var i, n, color;
+          n = doc.tcol.length;
+          for(i = 0; i < n; i++){
+            if(doc.tcol[i].checked) {
+              color = doc.tcol[i].value;
+              document.body.style.backgroundColor = color;
+            }
+            c = doc.t1.value;
+            document.body.style.color = c;
+          }
+        }
+      ]]>
+    </script>
+  </head>
+  <body>
+    <form id="f1">
+      <p>
+        India is my country
+        <table border="2">
+          <tr>
+            <td>Change Color:<br/></td>
+          </tr>
+          <tr>
+            <td><input type="text" name="t1"/></td>
+          </tr>
+          <tr>
+            <td>Change Background:</td>
+          </tr>
+          <tr>
+            <td><input type="radio" name="tcol" value="pink"/>Pink</td>
+            <td><input type="radio" name="tcol" value="yellow"/>Yellow</td>
+          </tr>
+          <tr>
+            <td><input type="button" name="name1" value="change" onclick="changeColor()"/></td>
+          </tr>
+        </table>
+      </p>
+    </form>
+  </body>
+</html>

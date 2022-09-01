@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<!-- Write an XHTML program to take a mathematical expression as an input and display the answer using JS -->
+
+<!DOCTYPE html PUBLIC "-//W3C//DTDXHTML1.1/EN" "http://www.w3c.org/TR/XHTML11/DTD/xhtml11.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <title>Mathematical Expressions</title>
+    <script type="text/javascript">
+      <![CDATA[
+        function mathExpn() {
+          var x = document.getElementById("f1").exptext.value;
+          var res = eval(x);
+          document.getElementById("f1").restext.value = res;
+        }
+      ]]>
+    </script>
+  </head>
+  <body bgcolor="lightblue">
+    <form id="f1">
+      <table border="1">
+        <tr>
+          <td>Expression:</td>
+          <td><input type="text" id="exptext"/></td>
+        </tr>
+        <tr>
+          <td>Result:</td>
+          <td><input type="text" id="restext"/></td>
+        </tr>
+        <tr colspan="2">
+          <td><input type="button" value="calculate" onclick="mathExpn()"/></td>
+        </tr>
+      </table>
+    </form>
+  </body>
+</html>

@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<!-- Write an XHTML program to display dynamic effects  -->
+
+<!DOCTYPE html PUBLIC "-//W3C/DXDHTML1.1/EN" "http://www.w3c.org/TR/XHTML11/DTD/xhtml11.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <title>Dynamic Effects</title>
+    <style>
+      .moveable {
+        position: absolute;
+      }
+    </style>
+    <script type="text/javascript">
+      <![CDATA[
+        var x = 5;
+        var y = 5;
+        var dest_x = 500;
+        var dest_y = 500;
+        var interval = 10;
+        function moveImage(){
+          if(x < dest_x){
+            x = x + interval;
+          }
+          if(y < dest_y) {
+            y = y + interval;
+          }
+          document.getElementById("ufo").style.top = y + "px";
+          document.getElementById("ufo").style.left = x + "px";
+          if ((x + interval < dest_x) && (y + interval < dest_y)) {
+            window.setTimeout("moveImage()",100);
+          }
+        }
+      ]]>
+    </script>
+  </head>
+  <body onload="moveImage()">
+    <div id="ufo" class="moveable">
+      <img src="ufo.jpg" alt="Please link to a valid image"/>
+    </div>
+  </body>
+</html>

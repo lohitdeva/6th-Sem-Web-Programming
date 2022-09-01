@@ -1,0 +1,50 @@
+library{
+  margin: 10px;
+  background-color: pink;
+}
+
+book {
+  display: block;
+  border: dotted;
+}
+
+title {
+  display: block;
+  color: blue;
+  font-family: Verdana;
+  font-size: 12px;
+}
+
+author {
+  display: block;
+  color: green;
+  font-family: Lucida;
+  font-size: 14px;
+}
+
+publisher {
+  display: block;
+  color: cyan;
+  font-family: Verdana;
+  font-size: 12px;
+}
+
+price {
+  display: block;
+  color: black;
+  font-family: Arial;
+  font-size: 12px;
+}
+
+edition {
+  display: block;
+  color: red;
+  font-family: Serif;
+  font-size: 12px;
+}
+ isbn {
+   display: block;
+   color: yellow;
+   font-family: Lucida;
+   font-size: 14px;
+ }

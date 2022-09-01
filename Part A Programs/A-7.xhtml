@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<!-- Write an XHTML program to input student details and use JS to compute the result  -->
+
+<!DOCTYPE html PUBLIC "-//W3C/DTDXHTML1.1/EN" "http://www.w3c.org/TR/XHTML11/DTD/xhtml11.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <title>Display Student Grade</title>
+  </head>
+  <body bgcolor="lightblue">
+    <script type="text/javascript">
+      <![CDATA[
+        function calc() {
+          var m1, m2, m3, avg = 0, tot = 0, result, grade;
+          m1 = parseInt(document.getElementById("WP").value);
+          m2 = parseInt(document.getElementById("net").value);
+          m3 = parseInt(document.getElementById("VP").value);
+          tot = m1 + m2 + m3;
+          avg = tot/3;
+          if (m1 >= 35 && m2 >= 35 && m3 >= 35) {
+            if(avg >= 75) {
+              result = "Distinction";
+              grade = "S";
+            } else if(avg >= 60) {
+              result = "First Class";
+              grade = "A";
+            } else if(avg >= 50) {
+              result = "Second Class";
+              grade = "B";
+            } else if (avg >= 35) {
+              result = "Pass";
+              grade = "C";
+            } else {
+              result = "Fail";
+              grade = "D";
+            }
+          } else {
+            result = "Fail";
+            grade = "D";
+          }
+          document.getElementById("total").value = tot;
+          document.getElementById("avg").value = avg;
+          document.getElementById("result").value = result;
+          document.getElementById("grade").value = grade;
+        }
+      ]]>
+    </script>
+    <form>
+      <table border="2">
+        <tr>
+          <th colspan="2">Student Form</th>
+        </tr>
+        <tr>
+          <td>Student Name</td>
+          <td><input type="text"/></td>
+        </tr>
+        <tr>
+          <td colspan="2">Subject Marks</td>
+        </tr>
+        <tr>
+          <td>WP</td>
+          <td><input type="text" id="WP"/></td>
+        </tr>
+        <tr>
+          <td>net</td>
+          <td><input type="text" id="net"/></td>
+        </tr>
+        <tr>
+          <td>VP</td>
+          <td><input type="text" id="VP"/></td>
+        </tr>
+        <tr>
+          <td colspan="2"><input type="button" id="calculate" onclick="calc()" value="Calculate"/></td>
+        </tr>
+        <tr>
+          <td>Total</td>
+          <td><input type="text" id="total"/></td>
+        </tr>
+        <tr>
+          <td>Average</td>
+          <td><input type="text" id="avg"/></td>
+        </tr>
+        <tr>
+          <td>Result</td>
+          <td><input type="text" id="result"/></td>
+        </tr>
+        <tr>
+          <td>Grade</td>
+          <td><input type="text" id="grade"/></td>
+        </tr>
+      </table>
+    </form>
+  </body>
+</html>
